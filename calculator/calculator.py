@@ -45,7 +45,7 @@ if __name__ =="__main__":
     #タイトル
     gui.title("Calculator by python")
     #ウィンドウのサイズ
-    gui.geometry("450x300")
+    gui.geometry("600x600")
     """StrningVar()は変数クラス
     このクラスのインスタンスを作成"""
     equation=StringVar()
@@ -55,64 +55,64 @@ if __name__ =="__main__":
     #グリッドメゾット移動のために使う
     expression_field.grid(columnspan=4,ipadx=70)
     #ボタンを作成
-    #数字ボタン
+    #数字ボタン,フォントサイズ16px
     button1=Button(gui,text='  1  ',fg='green',bg='gray',
-                  command=lambda:press(1),height=2,width=10)
+                  command=lambda:press(1),height=2,width=10,font=("Arial",16))
     button1.grid(row=2,column=0)
     button2=Button(gui,text='  2  ',fg='green',bg='gray',
-                  command=lambda:press(2),height=2,width=10)
+                  command=lambda:press(2),height=2,width=10,font=("Arial",16))
     button2.grid(row=2,column=1)
     button3=Button(gui,text='  3  ',fg='green',bg='gray',
-                  command=lambda:press(3),height=2,width=10)
+                  command=lambda:press(3),height=2,width=10,font=("Arial",16))
     button3.grid(row=2,column=2)
     button4=Button(gui,text='  4  ',fg='green',bg='gray',
-                  command=lambda:press(4),height=2,width=10)
+                  command=lambda:press(4),height=2,width=10,font=("Arial",16))
     button4.grid(row=3,column=0)
     button5=Button(gui,text='  5  ',fg='green',bg='gray',
-                  command=lambda:press(5),height=2,width=10)
+                  command=lambda:press(5),height=2,width=10,font=("Arial",16))
     button5.grid(row=3,column=1)
     button6=Button(gui,text='  6  ',fg='green',bg='gray',
-                  command=lambda:press(6),height=2,width=10)
+                  command=lambda:press(6),height=2,width=10,font=("Arial",16))
     button6.grid(row=3,column=2)
     button7=Button(gui,text='  7  ',fg='green',bg='gray',
-                  command=lambda:press(7),height=2,width=10)
+                  command=lambda:press(7),height=2,width=10,font=("Arial",16))
     button7.grid(row=4,column=0)
     button8=Button(gui,text='  8  ',fg='green',bg='gray',
-                  command=lambda:press(8),height=2,width=10)
+                  command=lambda:press(8),height=2,width=10,font=("Arial",16))
     button8.grid(row=4,column=1)
     button9=Button(gui,text='  9  ',fg='green',bg='gray',
-                  command=lambda:press(9),height=2,width=10)
+                  command=lambda:press(9),height=2,width=10,font=("Arial",16))
     button9.grid(row=4,column=2)
     button9=Button(gui,text='  0  ',fg='green',bg='gray',
-                  command=lambda:press(0),height=2,width=10)
+                  command=lambda:press(0),height=2,width=10,font=("Arial",16))
     button9.grid(row=5,column=0)
     #プラスボタン
     plus=Button(gui,text='  +  ',fg='green',bg='gray',
-                  command=lambda:press("+"),height=2,width=10)
+                  command=lambda:press("+"),height=2,width=10,font=("Arial",16))
     plus.grid(row=2,column=3)
     #マイナス
     minus=Button(gui,text='  -  ',fg='green',bg='gray',
-                  command=lambda:press("-"),height=2,width=10)
+                  command=lambda:press("-"),height=2,width=10,font=("Arial",16))
     plus.grid(row=3,column=3)
     #掛ける
     multiply=Button(gui,text='  x  ',fg='green',bg='gray',
-                  command=lambda:press("*"),height=2,width=10)
+                  command=lambda:press("*"),height=2,width=10,font=("Arial",16))
     multiply.grid(row=4,column=3)
     #割り算
     divide=Button(gui,text='  ÷  ',fg='green',bg='gray',
-                  command=lambda:press("/"),height=2,width=10)
+                  command=lambda:press("/"),height=2,width=10,font=("Arial",16))
     divide.grid(row=5,column=3)
     #イコール
     equal=Button(gui,text='  =  ',fg='green',bg='gray',
-                  command=equalpress,height=2,width=10)
+                  command=equalpress,height=2,width=10,font=("Arial",16))
     equal.grid(row=5,column=2)
     #クリアボタン
     clear=Button(gui,text='  C  ',fg='green',bg='gray',
-                  command=clear,height=2,width=10)
+                  command=clear,height=2,width=10,font=("Arial",16))
     clear.grid(row=5,column=1)
     #小数点
     decimal=Button(gui,text='  .  ',fg='green',bg='gray',
-                  command=lambda:press("."),height=2,width=10)
+                  command=lambda:press("."),height=2,width=10,font=("Arial",16))
     decimal.grid(row=6,column=0)
     #guiスタート
     gui.mainloop()
