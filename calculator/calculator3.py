@@ -6,6 +6,11 @@ import winsound
 #グローバル変数
 expression=""
 
+#電卓のボタンの色を変数でまとめる
+#fg=数字,bg=背景
+fgc='green'
+bgc='snow'
+
 #ボタンが押されたとき
 def press(num):
     global expression
@@ -14,6 +19,7 @@ def press(num):
     expression+=str(num)
     #equationメゾットを使用
     equation.set(expression)
+    #440Hzのビープ音を200ms流す
     winsound.Beep(440,200)
 
 #イコール
@@ -45,7 +51,7 @@ if __name__ =="__main__":
     #ウィンドウの背景の色
     gui.configure(background="bisque")
     #タイトル
-    gui.title("Calculator2 by python")
+    gui.title("Calculator3 powerd  by python")
     #ウィンドウのサイズ
     gui.geometry("600x600")
     """StrningVar()は変数クラス
@@ -58,9 +64,7 @@ if __name__ =="__main__":
     expression_field.grid(columnspan=4,ipadx=70)
     #ボタンを作成
 
-    #色を変数でまとめる
-    fgc='green'
-    bgc='snow'
+    
     #数字ボタン,フォントサイズ16px
     button1=Button(gui,text='  1  ',fg=fgc,bg=bgc,
                   command=lambda:press(1),height=2,width=10,font=("Arial",16))
