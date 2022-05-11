@@ -32,17 +32,23 @@ def equalpress():
         equation.set(total)
         #空白で初期化
         expression=""
+        #492HzBeep
+        winsound.Beep(492,200)
 
     #エラー発生
     except:
         equation.set("error")
         expression=""
+        #492HzBeep
+        winsound.Beep(492,200)
 
 #クリア機能
 def clear():
     global expression
     expression=""
     equation.set("")
+    #392HzBeep
+    winsound.Beep(392,200)
 
 #コード実行
 if __name__ =="__main__":
