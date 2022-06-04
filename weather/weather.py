@@ -1,4 +1,5 @@
 import datetime
+import imp
 from os import times
 
 import requests
@@ -62,22 +63,26 @@ area_dic={'北海道/釧路':'014100',
             '沖縄県/那覇':'471000',
             '沖縄県/石垣':'474000'}
 
-#今日の日付を取得してファイル名として結合
+#今日の日付を文字列に変換する
 today=datetime.date.today()
 d1=today.strftime("%y-%m-%d")
-
+#今日の日付を取得してファイル名として結合
 fname="weather" + d1 + ".csv"
 
 #csvのヘッダー
 header=['都道府県','データ配信元','報告日時',
         '地域名','予報日時','天気','風','波']
 
+#実行する関数
 def main():
     make_csv()
 
+#csvを作るなり
 def make_csv():
     with open(fname,'w',encoding='utf-8') as wf:
+        #開業まで書きます
         writer=csv.writer(wf,lineterminator='\n')
+        #ヘッダーを書き出す
         writer.writerow(header)
 
         #jsonファイルから情報を取得
@@ -87,7 +92,9 @@ def make_csv():
 
 def get_info():
     write_lists=[]
+    #気象庁のデータにアクセスするためのベースとなるURL
     base_url="https://www.jma.go.jp/bosai/forecast/data/forecast/"
+    #先に作成した配列を参照して地域別に天気情報を取得する
     for k,v in area_dic.items():
 
         if k.find('/'):
@@ -98,7 +105,8 @@ def get_info():
         #地域コードをurlに結合
         url=base_url + v + '.json'
         res=requests.get(url).json()
-
+        
+        
         for re in res:
             publishingOffice=re['publishingOffice']
             reportDatetime=re['reportDatetime']
